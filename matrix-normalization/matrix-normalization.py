@@ -18,7 +18,7 @@ def matrix_normalization(matrix, axis=None, norm_type='l2'):
 
     matrix = np.array(matrix)
 
-    # Only and exactly 2D array 
+    # Only and exactly 2D array , valid norm_type  , valid axis for 2D array 
     if matrix.ndim != 2  or norm_type not in ord_matching.keys() or (axis is not None and axis > 1)  :
         return None 
 
