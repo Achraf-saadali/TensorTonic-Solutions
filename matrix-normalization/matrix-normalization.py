@@ -18,7 +18,9 @@ def matrix_normalization(matrix, axis=None, norm_type='l2'):
 
     matrix = np.array(matrix)
 
-    if matrix.ndim > 2  :return None 
+    # Only and exactly 2D array 
+    if matrix.ndim != 2  or norm_type not in ord_matching.keys() or (axis is not None and axis > 1)  :
+        return None 
 
 
 
@@ -38,31 +40,29 @@ def matrix_normalization(matrix, axis=None, norm_type='l2'):
     '''
 
 
-    try:
-        # Computation of the norm  
+    
+    # Computation of the norm  
 
-        norm_array = np.linalg.norm (
-            # Flattening in case of a None axis 
-            matrix  if axis is not None else matrix.flatten() , 
-            axis = axis , 
-            # L1 norm or L2 norm or max
-            ord = ord_matching[norm_type]
+    norm_array = np.linalg.norm (
+        # Flattening in case of a None axis 
+        matrix  if axis is not None else matrix.flatten() , 
+        axis = axis , 
+        # L1 norm or L2 norm or max
+        ord = ord_matching[norm_type]
+    )
+
+    if axis is not None :
+        # expand dimension to broadcast in respect of
+        # norm axis computation 
+        norm_array = np.expand_dims(
+            norm_array , 
+            axis = axis 
         )
+
     
-        if axis is not None :
-            # expand dimension to broadcast in respect of
-            # norm axis computation 
-            norm_array = np.expand_dims(
-                norm_array , 
-                axis = axis 
-            )
+
+    return np.where( norm_array != 0 , matrix/norm_array , matrix)
     
-        print(norm_array)
-    
-        return np.where( norm_array != 0 , matrix/norm_array , matrix)
-    except Exception as e:
-        print(e)
-        return None
         
         
 
