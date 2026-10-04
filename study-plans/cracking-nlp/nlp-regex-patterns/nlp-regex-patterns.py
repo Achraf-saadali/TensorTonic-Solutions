@@ -2,7 +2,7 @@ import re
 
 def emails():
     #b is for the position of the epxression that match it
-    regex = r"\b[A-Za-z0-9\.%_+-]+@[A-Za-z0-9\.-]+\.[A-Za-z][A-Za-z]+\b"
+    regex = r"[A-Za-z0-9\.%_+-]+@[A-Za-z0-9\.-]+\.[A-Za-z][A-Za-z]+"
     return regex
 def urls():
     regex = r"https?://\S*[^\s,.)!?;:]"
