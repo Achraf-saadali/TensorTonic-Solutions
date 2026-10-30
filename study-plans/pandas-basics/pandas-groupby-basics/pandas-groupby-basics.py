@@ -6,11 +6,11 @@ def groupby_basics(data: dict, group_col: str, value_col: str) -> dict:
     """
     df = pd.DataFrame(data = data )
 
-    group = df.groupby(group_col)
+    group = df.groupby(group_col)[value_col]
 
     count = group.count().to_dict()
 
     sum = group.sum().to_dict() 
     mean = group.mean().to_dict()
 
-    return {"sum":sum[value_col],"mean" : mean[value_col] , "count" : count[value_col]}
+    return {"sum":sum,"mean" : mean , "count" : count}
