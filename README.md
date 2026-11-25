@@ -101,6 +101,7 @@ Verified machine learning implementations completed on [TensorTonic](https://www
 | Unstack Long to Wide | Implement Unstack Long to Wide, and return a dict of lists representing the wide-format DataFrame. | https://www.tensortonic.com/problems/pandas-unstack-long-to-wide |
 | PCA Projection | Project centered observations onto supplied principal components to produce lower-dimensional features. | https://www.tensortonic.com/problems/pca-projection |
 | Percent Change | Compute period-over-period percentage changes in a numeric time series with defined initial-value handling. | https://www.tensortonic.com/problems/percent-change |
+| Percentiles / Quantiles | Compute requested data percentiles with linear interpolation using NumPy-compatible quantile semantics. | https://www.tensortonic.com/problems/probstat-percentiles |
 | Sample Variance & Standard Deviation | Compute unbiased sample variance and standard deviation with Bessel correction for a numeric sample. | https://www.tensortonic.com/problems/probstat-sample-var-std |
 | Implement ReLU Activation | Apply the ReLU activation element-wise by replacing negative values with zero and preserving nonnegative inputs. | https://www.tensortonic.com/problems/relu-activation |
 | Implement Sigmoid in NumPy | Implement a vectorized sigmoid activation in NumPy for scalars, lists, vectors, and matrices, including large positive and negative inputs. | https://www.tensortonic.com/problems/sigmoid-numpy |
