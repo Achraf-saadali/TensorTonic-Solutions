@@ -10,13 +10,13 @@ def winsorize(data: list, lo_q: float, hi_q: float) -> np.ndarray:
     
     clipped = np.clip(data , lower , higher)
 
-    lower_mask =  (data < clipped).astype(float)
+    lower_mask =  (data < clipped).astype(np.float64)
 
-    upper_mask = (data > clipped).astype(float)
+    upper_mask = (data > clipped).astype(np.float64)
 
     return np.stack([clipped , lower_mask , upper_mask])
 
     
     
 
-    return clipped
+    
